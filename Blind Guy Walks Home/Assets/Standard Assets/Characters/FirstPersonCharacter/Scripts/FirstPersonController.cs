@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
+using XInputDotNetPure; // Required in C#
 
 namespace UnityStandardAssets.Characters.FirstPerson
 {
@@ -41,6 +42,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
+        private PlayerIndex m_playerIndex;
+        bool m_playerIndexSet = false;
 
         // Use this for initialization
         private void Start()
@@ -55,6 +58,16 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
+
+            // Connects the controller and sets up the gamepad
+            PlayerIndex testPlayerIndex = (PlayerIndex)0;
+            GamePadState testState = GamePad.GetState(testPlayerIndex);
+            if (testState.IsConnected)
+            {
+                Debug.Log(string.Format("GamePad found {0}", testPlayerIndex));
+                m_playerIndex = testPlayerIndex;
+                m_playerIndexSet = true;
+            }
         }
 
 
@@ -242,12 +255,18 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void OnControllerColliderHit(ControllerColliderHit hit)
         {
+
             Rigidbody body = hit.collider.attachedRigidbody;
             //dont move the rigidbody if the character is on top of it
             if (m_CollisionFlags == CollisionFlags.Below)
             {
                 return;
             }
+
+            if (m_playerIndexSet && hit.gameObject.tag != "Floor")
+                GamePad.SetVibration(m_playerIndex, 1, 1);
+            else
+                GamePad.SetVibration(m_playerIndex, 0, 0);
 
             if (body == null || body.isKinematic)
             {
