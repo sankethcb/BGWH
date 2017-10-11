@@ -26,13 +26,16 @@ public class Zombie : VehicleMovement {
     Vector2 humanXZ;
     Vector2 zombieXZ;
 
-
+    AudioSource myAudio;
+    public AudioClip monsterWalking;
     // Use this for initialization
     public override void Start()
     {
         base.Start();
         //set first zombies target to a human
         zombieTarget = GameObject.Find("Player");
+        myAudio = GetComponent<AudioSource>();
+        StartCoroutine(Footsteps());
     }
 
     protected override void CalcSteeringForces()
@@ -86,13 +89,14 @@ public class Zombie : VehicleMovement {
         //clamp and apply forces
         Vector3.ClampMagnitude(ultamateForce, maxForce);
         base.ApplyForce(ultamateForce);
-        
+        //playFootstep();
 
     }
 
     //opengl debug lines
     void OnRenderObject()
     {
+        /*
         if (showLines) {
             forwardMat.SetPass(0);
             GL.Begin(GL.LINES);
@@ -123,8 +127,20 @@ public class Zombie : VehicleMovement {
                 GL.End();
             }
         }
+
+    */
     }
+
+
     
+
+
+    IEnumerator Footsteps()
+    {
+        myAudio.PlayOneShot(monsterWalking);
+        yield return new WaitForSeconds(0.5f);
+        StartCoroutine(Footsteps());
+    }
 
 
 }
