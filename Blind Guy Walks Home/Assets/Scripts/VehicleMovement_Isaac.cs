@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public abstract class VehicleMovement : MonoBehaviour {
+public abstract class VehicleMovement_Isaac: MonoBehaviour {
 
     //a vec for the direction of the scene
     Vector3 direction;

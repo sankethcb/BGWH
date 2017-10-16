@@ -2,7 +2,7 @@
 using System.Collections;
 using System;
 using System.Collections.Generic;
-public class Zombie : VehicleMovement {
+public class Zombie_Isaac : VehicleMovement_Isaac {
 
     //zombie target and obstacles
     public GameObject zombieTarget;
