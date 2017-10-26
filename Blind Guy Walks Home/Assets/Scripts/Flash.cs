@@ -8,7 +8,7 @@ public class Flash : MonoBehaviour {
     Image dark;
     Color c;
 
-    float cooldown = 5.0f;
+    float cooldown = 10.0f;
     float next = 5.0f;
 
     float min = 0.0f;
@@ -27,12 +27,12 @@ public class Flash : MonoBehaviour {
     {
 		if (Time.time > next)
         {
-            next += Time.time + cooldown;
+            next = Time.time + cooldown;
             c.a = 0.0f;
             dark.color = c;
             t = 0.0f;
         }
-        if (c.a < 1.0f)
+        if (next < Time.time + 5.0f)
         {
             c.a = Mathf.Lerp(min, max, t);
             t += 0.5f * Time.deltaTime;
