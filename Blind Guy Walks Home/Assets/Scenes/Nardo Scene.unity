@@ -901,9 +901,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_scaleFactor: 10
   m_floor: {fileID: 951605230}
-  m_treeObject: {fileID: 1820683249641900, guid: 4096f6145d4a17949b1b209c9b630bfe,
+  m_treeObject: {fileID: 1751281023038288, guid: e030755497436974b87c818f58adabf9,
     type: 2}
-  m_rockObject: {fileID: 1820683249641900, guid: 4096f6145d4a17949b1b209c9b630bfe,
+  m_rockObject: {fileID: 1707765381853144, guid: bd9ce57fd5f286144b2541412a85026a,
     type: 2}
   m_playerObject: {fileID: 100000, guid: 6bf18476bd6983940bb800548eb73ac4, type: 2}
   m_monsterObject: {fileID: 1827157759106510, guid: cbdcb2678df1d3041b4f45bef464db53,
