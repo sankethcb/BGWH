@@ -263,8 +263,27 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 return;
             }
 
-            if (m_playerIndexSet && hit.gameObject.tag != "Floor")
-                GamePad.SetVibration(m_playerIndex, 1, 1);
+            //Code to determine which side of the controller to vibrate
+            if ( hit.gameObject.tag != "Floor")
+            {
+                int leftVib = 0;
+                int rightVib = 0;
+                Vector3 hitDir = hit.transform.position - transform.position;
+                Vector3.Normalize(hitDir);
+
+                if (Vector3.Dot(hitDir, transform.right) < 0)
+                    leftVib = 1;
+
+                if (Vector3.Dot(hitDir, transform.right) > 0)
+                    rightVib = 1;
+
+                else
+                    rightVib = leftVib = 1;
+
+                GamePad.SetVibration(m_playerIndex,leftVib , rightVib);
+                
+            }
+                
             else
                 GamePad.SetVibration(m_playerIndex, 0, 0);
 
