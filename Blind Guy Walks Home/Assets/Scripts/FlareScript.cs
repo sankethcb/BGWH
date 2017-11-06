@@ -17,7 +17,8 @@ public class FlareScript : MonoBehaviour
         flareRgbd = gameObject.GetComponent<Rigidbody>();
 
         //Shoots the flare at a random direction
-        Vector3 direction = new Vector3(Random.Range(-500.0f, 500.0f), 1000.0f, Random.Range(-1000.0f, 0.0f));
+        Vector3 direction = new Vector3(Random.Range(-500.0f, 0.0f), 1000.0f, Random.Range(-500.0f, 500.0f));
+
         flareRgbd.AddForce(direction);
     }
 	
