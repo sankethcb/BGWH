@@ -1,11 +1,11 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blind Guy Walks Home", "Assembly-CSharp-firstpass.csproj", "{694EDAC7-C95C-4A5D-D9DF-3A0AF9CFFCBD}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blind Guy Walks Home.Plugins", "Blind Guy Walks Home.Plugins.csproj", "{76D40130-66A8-D10F-8E7D-98070840373B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blind Guy Walks Home", "Assembly-CSharp.csproj", "{D68ED4AF-43CE-4796-0CA2-8AB2C0FCC485}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blind Guy Walks Home", "Blind Guy Walks Home.csproj", "{49FBEE3B-9512-2C68-0192-32779C61C7F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blind Guy Walks Home", "Assembly-CSharp-Editor-firstpass.csproj", "{190D5D71-3669-53F1-67AD-7403963DAFE0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blind Guy Walks Home.Editor.Plugins", "Blind Guy Walks Home.Editor.Plugins.csproj", "{01AC4605-B99C-61C0-65D1-8BB090187C5B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,23 +13,20 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{694EDAC7-C95C-4A5D-D9DF-3A0AF9CFFCBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{694EDAC7-C95C-4A5D-D9DF-3A0AF9CFFCBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{694EDAC7-C95C-4A5D-D9DF-3A0AF9CFFCBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{694EDAC7-C95C-4A5D-D9DF-3A0AF9CFFCBD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D68ED4AF-43CE-4796-0CA2-8AB2C0FCC485}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D68ED4AF-43CE-4796-0CA2-8AB2C0FCC485}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D68ED4AF-43CE-4796-0CA2-8AB2C0FCC485}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D68ED4AF-43CE-4796-0CA2-8AB2C0FCC485}.Release|Any CPU.Build.0 = Release|Any CPU
-		{190D5D71-3669-53F1-67AD-7403963DAFE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{190D5D71-3669-53F1-67AD-7403963DAFE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{190D5D71-3669-53F1-67AD-7403963DAFE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{190D5D71-3669-53F1-67AD-7403963DAFE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76D40130-66A8-D10F-8E7D-98070840373B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76D40130-66A8-D10F-8E7D-98070840373B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76D40130-66A8-D10F-8E7D-98070840373B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76D40130-66A8-D10F-8E7D-98070840373B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49FBEE3B-9512-2C68-0192-32779C61C7F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49FBEE3B-9512-2C68-0192-32779C61C7F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49FBEE3B-9512-2C68-0192-32779C61C7F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49FBEE3B-9512-2C68-0192-32779C61C7F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01AC4605-B99C-61C0-65D1-8BB090187C5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01AC4605-B99C-61C0-65D1-8BB090187C5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01AC4605-B99C-61C0-65D1-8BB090187C5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01AC4605-B99C-61C0-65D1-8BB090187C5B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal
