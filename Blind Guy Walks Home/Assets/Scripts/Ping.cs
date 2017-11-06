@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Ping : MonoBehaviour {
 
-   // public AudioClip m_pingAudio;
+   
     public  GameObject m_pingObject;
+    public GameObject m_pingAnimation;
     RaycastHit[] hits;
 
     // Use this for initialization
@@ -19,7 +20,8 @@ public class Ping : MonoBehaviour {
     {
 
 
-        if (Input.GetKeyDown(KeyCode.Joystick1Button0))
+        //if (Input.GetKeyDown(KeyCode.Joystick1Button0))
+        if (Input.GetKeyDown(KeyCode.Space))
             SendPing();
         
        
@@ -29,7 +31,8 @@ public class Ping : MonoBehaviour {
 
     void SendPing()
     {
-        Debug.Log("1");
+        GameObject pingAnimation = Instantiate(m_pingAnimation, transform.position, Quaternion.Euler(new Vector3(90,0,0)));
+        Destroy(pingAnimation,0.7f);
         hits = Physics.SphereCastAll(transform.position, 10.0f, transform.forward);
         foreach (RaycastHit hit in hits)
         {

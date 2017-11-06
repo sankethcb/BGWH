@@ -11,7 +11,7 @@ abstract public class VehicleMovement : MonoBehaviour
     public float mass;
     public float maxSpeed;
     public float bounds;
-    public GameObject[] obstacles;
+    GameObject[] obstacles;
 
     Vector3 position;
 	Vector3 direction;
@@ -29,8 +29,8 @@ abstract public class VehicleMovement : MonoBehaviour
     // Use this for initialization
     public virtual void Start ()
 	{
-       
-        
+
+        obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
     }
 	
 	// Update is called once per frame

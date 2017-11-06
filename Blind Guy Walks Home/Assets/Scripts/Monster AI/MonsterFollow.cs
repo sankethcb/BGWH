@@ -25,7 +25,6 @@ public class MonsterFollow : VehicleMovement
 
         ultimateForce = Vector3.zero;
         ultimateForce += Seek(target.transform.position);
-        ultimateForce += StayinBounds();
         ultimateForce += Avoid(2f);
 
         Vector3.ClampMagnitude(ultimateForce, maxForce);
