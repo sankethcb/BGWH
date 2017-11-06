@@ -265,7 +265,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
 
             //Code to determine which side of the controller to vibrate
-            if ( hit.gameObject.tag != "Floor")
+            if (hit.gameObject.tag == "Car" || hit.gameObject.tag == "Monster")
+            {
+                SceneManager.LoadScene(2);
+            }
+            else if ( hit.gameObject.tag != "Floor")
             {
                 int leftVib = 0;
                 int rightVib = 0;
@@ -284,10 +288,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 GamePad.SetVibration(m_playerIndex,leftVib , rightVib);
                 
             }
-            else if(hit.gameObject.tag != "Car" || hit.gameObject.tag != "Monster")
-            {
-                SceneManager.LoadScene(2);
-            }
+           
             else
                 GamePad.SetVibration(m_playerIndex, 0, 0);
 
