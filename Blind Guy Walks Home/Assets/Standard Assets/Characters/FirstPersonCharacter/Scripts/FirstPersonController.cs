@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 using XInputDotNetPure; // Required in C#
 
@@ -283,7 +284,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 GamePad.SetVibration(m_playerIndex,leftVib , rightVib);
                 
             }
-                
+            else if(hit.gameObject.tag != "Car" || hit.gameObject.tag != "Monster")
+            {
+                SceneManager.LoadScene(2);
+            }
             else
                 GamePad.SetVibration(m_playerIndex, 0, 0);
 
