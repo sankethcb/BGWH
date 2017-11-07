@@ -284,9 +284,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 GamePad.SetVibration(m_playerIndex,leftVib , rightVib);
                 
             }
-            else if(hit.gameObject.tag != "Car" || hit.gameObject.tag != "Monster")
+            else if(hit.gameObject.tag == "Car")
             {
-                SceneManager.LoadScene(2);
+                SceneManager.LoadScene("You Win");
+            }
+            else if (hit.gameObject.tag == "Monster")
+            {
+                SceneManager.LoadScene("Game Over");
             }
             else
                 GamePad.SetVibration(m_playerIndex, 0, 0);
