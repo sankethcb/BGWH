@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class LightManager : MonoBehaviour
 {
-    GameObject darkLight;
     GameObject target;
 
     public GameObject flareLight; //Get the flare in the inspector
@@ -15,7 +14,6 @@ public class LightManager : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        darkLight = GameObject.Find("Darkness");
         target = GameObject.Find("Target");
 	}
 	
